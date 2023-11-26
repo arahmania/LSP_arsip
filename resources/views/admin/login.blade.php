@@ -2,18 +2,18 @@
 
 @section('content')
 
-<body class=""style="background-color: #AFEEEE;">
+<body class=""style="background-color: #ffffff;">
 
 <div class="container d-flex justify-content-center align-items-center vh-100">
     <div class="card pt-5 px-3 bg-biru papan">
-      <div class="circle-container">
-        <div class="circle">
+      <div class="">
+        {{-- <div class="circle">
           <img src="{{ asset('img/logo-login.png') }}" class="my-2 " alt="Gambar Kecil">
-        </div>
+        </div> --}}
       </div>
 
       <div class="card-body ">
-        <h3 class="card-title mb-4 text-center" style="color: #AFEEEE;">Login</h3>
+        <h3 class="card-title mb-4 text-center" style="color: #ffffff;">Login Arsip Surat</h3>
         <form class="mx-3 user"  role="form" method="POST" action="{{ route('login') }}">
           @csrf
           <div class="from-group">
@@ -38,10 +38,10 @@
             </div>
           </div>
           <button type="submit" class="btn btn-primary col-12 mt-3"
-            style="background-color: #AFEEEE;color: #000; font-weight: bold;border-width: 0%;">LOGIN</button>
+            style="background-color: #2954b7;color: #000; font-weight: bold;border-width: 0%;">LOGIN</button>
         </form>
-        <p class="mt-3 mb-0 text-white text-center" style="font-size: smaller;">Don't have an account ? <a href="{{ route('register')}}"
-            style="color: #AFEEEE;text-decoration: none;">Sign Up</a></p>
+        {{-- <p class="mt-3 mb-0 text-white text-center" style="font-size: smaller;">Don't have an account ? <a href="{{ route('register')}}"
+            style="color: #AFEEEE;text-decoration: none;">Sign Up</a></p> --}}
       </div>
     </div>
   </div>

@@ -41,12 +41,12 @@ Route::get('/img/logo-login.png', function () {
 Route::get('/img/logo-sidebar.png', function () {
     return response(file_get_contents(public_path('assets/img/logo-sidebar.png')))->header('Content-Type', 'file/png');
 });
-Route::get('/img/aku.png', function () {
-    return response(file_get_contents(public_path('assets/img/aku.png')))->header('Content-Type', 'file/png');
+Route::get('/img/arema.jpg', function () {
+    return response(file_get_contents(public_path('assets/img/arema.jpg')))->header('Content-Type', 'file/jpg');
 });
 
     Route::middleware(['guest'])->group(function(){
-   
+
         Route::get('admin', [SessionController::class, 'login'])-> name('masuk');
         Route::get('/register', [SessionController::class, 'register'])-> name('register');
         Route::post('create-admin', [SessionController::class, 'createUser'])-> name('create-admin');
@@ -57,8 +57,8 @@ Route::get('/img/aku.png', function () {
 
     Route::middleware(['auth'])->group(function(){
         Route::get('/logout', [SessionController::class, 'destroy'])-> name('logout');
-        
-    
+
+
         Route::get('data-arsip', [ArsipController::class, 'indexArsip'])-> name('data-arsip');
         Route::get('data-kategori', [ArsipController::class, 'indexKategori'])-> name('data-kategori');
         Route::get('unggah', [ArsipController::class, 'arsipSurat'])-> name('unggah');
@@ -75,6 +75,5 @@ Route::get('/img/aku.png', function () {
         Route::post('/kategori/update/{id_kategori}', [ArsipController::class, 'updateKategori']) -> name('kategori.update-kategori');
         Route::get('/arsip/cari', [ArsipController::class, 'cariArsip'])->name('arsip.cari');
         Route::get('/kategori/cari', [ArsipController::class, 'cariKategori'])->name('kategori.cari');
-        
+
     });
-   
